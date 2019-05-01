@@ -11,7 +11,7 @@ Resources:
       Description: ''
       MemorySize: 256
       Timeout: 30
-      Role: 'arn:aws:iam::211620672909:role/hello-lambda-role'
+      Role: 'arn:aws:iam::<account number>:role/<lambda-role>'
       Events:
         Api1:
           Type: Api
