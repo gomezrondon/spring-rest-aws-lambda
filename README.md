@@ -12,3 +12,10 @@ docker-compose up -d
 
 3) To stop the container (using docker compose):
 docker-compose down
+
+---------
+4) how to upload the to the gcp container registry:
+gradle jib -Djib.to.image=gcr.io/[project_id]/spring-gcp-run:1.0.0
+
+4.1) list images:
+gcloud container images list --repository=gcr.io/[project_id]
