@@ -1,0 +1,20 @@
+#list all employees
+http://192.168.99.100:8080/employees
+
+###
+
+#get al employees with last name gil
+http://192.168.99.100:8080/employees/lastname/gil
+
+###
+
+
+PUT http://192.168.99.100:8080/employees
+Content-Type: application/json
+
+{
+  "firstName": "mike",
+  "lastName": "smith"
+}
+
+###

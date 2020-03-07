@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'spring-rest-aws-lambda'
+rootProject.name = 'spring-gcp-run'
