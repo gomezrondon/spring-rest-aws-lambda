@@ -2,6 +2,7 @@ package com.gomezrondon.springrestawslambda.service;
 
 
 import com.gomezrondon.springrestawslambda.entitie.Employee;
+import com.gomezrondon.springrestawslambda.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +11,26 @@ import java.util.List;
 @Service
 public class EmployeeService {
 
+    private final EmployeeRepository repository;
 
-    public void save(Employee employee){
+    public EmployeeService(EmployeeRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<Employee> getAllEmployees() {
+        return repository.findAll();
+    }
+
+    public Employee save(Employee employee){
       //  repository.save(employee);
-        System.out.println(">>>> SAVED >>>>> "+employee.toString());
+        Employee save = repository.save(employee);
+
+        return save;
     }
 
     public List<Employee> findByLasName(String name) {
-       // List<Employee> empl = repository.findByLastName(lastName);
-        List<Employee> empl = new ArrayList<Employee>();
-        empl.add(new Employee(name, "gomez"));
-        System.out.println(">>>> Num. Found >>>>> "+empl.size());
+       List<Employee> empl = repository.findAllByLastName(name);
+
         return empl;
     }
 

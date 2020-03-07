@@ -1,16 +1,26 @@
 package com.gomezrondon.springrestawslambda.entitie;
 
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Employee {
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+  //  @Column(name = "firstsddname")
     private String firstName;
 
+   // @Column(name = "lastname")
     private String lastName;
+
     private String primary_skills;
     private String location; // 3 char(3)
 

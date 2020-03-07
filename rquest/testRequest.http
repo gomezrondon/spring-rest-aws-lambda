@@ -1,0 +1,20 @@
+#list all employees
+http://localhost:8080/employees
+
+###
+
+#get al employees with last name gil
+http://localhost:8080/employees/lastname/gil
+
+###
+
+
+PUT http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "firstName": "mike",
+  "lastName": "smith"
+}
+
+###
