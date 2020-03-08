@@ -1,3 +1,7 @@
+#requesting time
+http://localhost:8080/time
+###
+
 #list all employees
 http://localhost:8080/employees
 

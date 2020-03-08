@@ -2,6 +2,7 @@ package com.gomezrondon.springrestawslambda.controller;
 
 import com.gomezrondon.springrestawslambda.entitie.Employee;
 import com.gomezrondon.springrestawslambda.service.EmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
+@Slf4j
 public class EndpointController {
 
     private final EmployeeService service;
@@ -23,7 +25,9 @@ public class EndpointController {
 
     @GetMapping("/time")
     public String forTesting() {
-        return LocalDateTime.now().toString();
+        String time = LocalDateTime.now().toString();
+        log.info("Login time requested: "+time);
+        return time;
     }
 
     @GetMapping("/employees")
