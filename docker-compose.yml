@@ -2,7 +2,14 @@ version: '2.1'
 
 services:
   rest-lambda:
-    image: spring-gcp-run:1.0.0
+    build: .
     container_name: spring-aws-lambda
+    environment:
+      - PROJECT_ID=
+      - DB_USER=
+      - DB_PASSWORD=
+      - DB_NAME=
+      - INSTANCE_CONNECTION=
+      - CREDENTIALS=file:
     ports:
       - 8080:8080
