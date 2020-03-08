@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="CESU-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Comptaible" content="ie=edge">
+    <title>Employees list pepe</title>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <h1> Spring employees example</h1>
+        <ul>
+            <li v-for="empl in employees">{{ empl.firstName}}</li>
+        </ul>
+    </div>
+
+    <script>
+        const apiURL = "http://localhost:8080/employees";
+        new Vue({
+            el: '#app',
+            data(){
+                return {
+                    employees:[]
+                }
+            },
+            created(){
+                fetch(apiURL)
+                .then(response =>{
+                    return response.json()
+                })
+                .then(employees => {
+                    this.employees = employees;
+                })
+            }
+        });
+    </script>
+</body>
+</html>
